@@ -6,9 +6,10 @@
  */
 
 // Frontend থেকে FastAPI backend-এ অনুরোধ পাঠানো
+
 export async function queryBackend(prompt, context) {
   try {
-    const response = await fetch("http://127.0.0.1:8000/ask", {
+    const response = await fetch("https://backend-fastapi-production.up.railway.app/ask", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +22,6 @@ export async function queryBackend(prompt, context) {
     const data = await response.json();
     console.log("Backend response:", data);
 
-    // শুধুমাত্র answer key থেকে রেসপন্স নেওয়া
     return {
       answer: data?.answer || "কোনো উত্তর পাওয়া যায়নি।",
     };
@@ -32,4 +32,5 @@ export async function queryBackend(prompt, context) {
     };
   }
 }
+
 
