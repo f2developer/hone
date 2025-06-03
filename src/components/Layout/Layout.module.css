@@ -1,0 +1,45 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.mainContent {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+  transition: margin-left var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .contentWithSidebar {
+    margin-left: 320px;
+  }
+}
+
+/* For mobile, create an overlay effect when sidebar is open */
+@media (max-width: 767px) {
+  .contentWithSidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+  }
+}

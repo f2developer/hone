@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 var(--spacing-4);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-header);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  color: var(--color-on-surface);
+  margin-right: var(--spacing-2);
+  transition: background-color var(--transition-fast);
+}
+
+.menuButton:hover {
+  background-color: var(--color-hover);
+}
+
+.menuButton:active {
+  background-color: var(--color-active);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.geminiText {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-on-surface);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  color: var(--color-on-surface);
+  transition: background-color var(--transition-fast);
+}
+
+.themeToggle:hover {
+  background-color: var(--color-hover);
+}
+
+.themeToggle:active {
+  background-color: var(--color-active);
+}
+
+/* Animation for theme toggle */
+.themeToggle svg {
+  transition: transform var(--transition-normal);
+}
+
+.themeToggle:hover svg {
+  transform: rotate(15deg);
+}
